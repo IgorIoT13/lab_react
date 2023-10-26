@@ -1,0 +1,15 @@
+.navpan{
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(200, 200, 200);
+}
+    .navpan ul{
+        display: flex;
+        justify-content: space-around;
+    }
+        .navpan ul li{
+            list-style-type: none;
+            padding: 5% 20% 3% 7%;
+            margin-right: 20%;
+            margin-top: 3%;
+        }
