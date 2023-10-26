@@ -1,0 +1,38 @@
+header{
+    background-image:url("../img/litak-1.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding:7% 0%;
+    margin-bottom: 40px;
+}
+    header .up{
+        color: white;
+    }
+        header .up h1{
+            color: white;
+            padding: 30px;
+        }
+        header .up h3{
+            color: white;
+            padding: 10px;
+            padding-bottom: 30px;
+
+        }
+    header .down{
+        padding: 10px;
+    }
+.button_header{
+    text-decoration: none;
+    color: rgb(200 200 200);
+    padding: 20px;
+}
+.button_header:hover{
+    color: white;
+    border: 2px solid rgb(200 200 200);
+    border-radius: 30px;
+}
+.pre_ambul{
+    margin: 0 auto;
+    max-width: 70%;
+}

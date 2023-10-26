@@ -1,0 +1,19 @@
+footer{
+    ;
+}
+    footer aside{
+
+    }
+        footer aside ul{
+            display: flex;
+            justify-content: space-around;
+        }
+            footer aside ul li{
+                list-style-type: none;
+                margin: 30px;
+            }
+                footer aside ul li a{
+                    text-decoration: none;
+                    color: black;
+                    padding: 15px;
+                }

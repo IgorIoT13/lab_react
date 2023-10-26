@@ -3,10 +3,17 @@ import Element from "./element/Element";
 import './css/header.css'
 import DecorateBlocEle from "./element/DecorateBlocEle";
 
+import Boing_1 from './img/boing-1.jpg';
+
+import Superjet from './img/superjet.jpg';
+
+import Boing_2 from './img/boing-2.jpg'
+
+
 const Contend = () => {
     return (
         <span>
-            <div>
+            <div className={'pre_ambul'}>
                 <h1>Ми пропонуєм:</h1>
                 <h4>
                     Прекрасний вибір літальних апаратів, які зарокемендували себе у незліченних польотах.
@@ -15,15 +22,15 @@ const Contend = () => {
                 </h4>
             </div>
             <div className={'container'}>
-                <Element post ={{img: './img/',
+                <Element post ={{img: Boing_1,
                     title:"Boing-45",
                     text:" Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."}}/>
 
-                <Element post ={{img: './img/',
+                <Element post ={{img: Superjet,
                     title:"SuperJet",
                     text:" Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."}}/>
 
-                <Element post ={{img: './img/',
+                <Element post ={{img: Superjet,
                     title:"Boing- 87",
                     text:" Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."}}/>
 
@@ -36,13 +43,13 @@ const Contend = () => {
                     <div className={'decorate_block'}>
 
                         <div className={'Block'}>
-                            <div className={'flex_block'}>
-                                <DecorateBlocEle post = {{img:"./",
+                            <div className={'flex_block mar'}>
+                                <DecorateBlocEle post = {{img:"",
                                     title:"Чесність",
                                     description:"Уразі будь яких не зручностей ви можете звернутись " +
                                         "у нашу підтримку"}}/>,
 
-                                <DecorateBlocEle post = {{img:"./",
+                                <DecorateBlocEle post = {{img:"",
                                     title:"Безпека",
                                     description:"Усі наші літаки проходять регулярну перевірку " +
                                         "і обсуговуються при першій нагоді"}}/>,

@@ -3,6 +3,7 @@ import React from 'react';
 import '../css/element.css'
 
 
+
 const Element = (props) => {
     return (
         <div className={'element'}>
@@ -13,6 +14,8 @@ const Element = (props) => {
             <div className={'element__textblock'}>
                 <h1>{props.post.title}</h1>
                 <p>{props.post.text}</p>
+
+                <a href={'#'}>Більше</a>
             </div>
         </div>
     );

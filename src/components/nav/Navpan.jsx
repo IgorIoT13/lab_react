@@ -9,10 +9,13 @@ const Navpan = () => {
                     <li><a href={'#'}>Home</a></li>
                     <li><a href={'#'}>Catalog</a></li>
                     <li><a href={'#'}>Help</a></li>
-                    <li><a href={'#'}>Sing up</a></li>
+                    <li><a href={'#'}>Contact</a></li>
                 </ul>
             </div>
-        </nav>    );
+            <hr/>
+        </nav>
+
+    );
 };
 
 export default Navpan;
