@@ -10,6 +10,26 @@ import Superjet from './img/superjet.jpg';
 import Boing_2 from './img/boing-2.jpg'
 
 
+const elementsData = [
+    {
+        img: Boing_1,
+        title: "Boing-45",
+        text: "Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."
+    },
+    {
+        img: Superjet,
+        title: "SuperJet",
+        text: "Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."
+    },
+    {
+        img: Superjet,
+        title: "Boing- 87",
+        text: "Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."
+    }
+];
+
+
+
 const Contend = () => {
     return (
         <span>
@@ -22,18 +42,12 @@ const Contend = () => {
                 </h4>
             </div>
             <div className={'container'}>
-                <Element post ={{img: Boing_1,
-                    title:"Boing-45",
-                    text:" Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."}}/>
-
-                <Element post ={{img: Superjet,
-                    title:"SuperJet",
-                    text:" Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."}}/>
-
-                <Element post ={{img: Superjet,
-                    title:"Boing- 87",
-                    text:" Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."}}/>
-
+                {elementsData.map((element, index) => (
+                    <Element
+                        key={index}
+                        post={element}
+                    />
+                ))}
             </div>
             <div className={'Down_block'}>
                      <div className={'decoration_text'}>

@@ -1,5 +1,7 @@
 import React from "react";
 
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+
 import './App.css';
 import Navpan from './components/nav/Navpan'
 import Contend from "./components/header/Contend";
@@ -12,7 +14,10 @@ function App() {
     <div className="App">
         <Navpan />
         <Header />
-        <Contend />
+        <Routes>
+            <Route path="/" element={<Contend />} />
+            <Route path="/catalog" element={<Footer />} />
+        </Routes>
         <Footer/>
     </div>
 
