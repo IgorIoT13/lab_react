@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Catalog = () => {
+const Scroll = () => {
     return (
         <div>
-            
+
         </div>
     );
 };
 
-export default Catalog;
+export default Scroll;

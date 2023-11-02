@@ -6,8 +6,8 @@ const Navpan = () => {
         <nav>
             <div className={'navpan'}>
                 <ul>
-                    <li><a href={'#'}>Home</a></li>
-                    <li><a href={'#'}>Catalog</a></li>
+                    <li><a href={'/'}>Home</a></li>
+                    <li><a href={'/catalog'}>Catalog</a></li>
                     <li><a href={'#'}>Help</a></li>
                     <li><a href={'#'}>Contact</a></li>
                 </ul>

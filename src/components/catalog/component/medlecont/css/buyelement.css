@@ -1,0 +1,18 @@
+.element_b{
+    border: 1px solid black;
+    width: 70%;
+    margin: 3% 2% 6% 13%;
+    border-radius: 20px;
+}
+.element__img_b img{
+    width: 100%;
+    border-radius: 20px 20px 0 0 ;
+    padding: 0px;
+}
+a{
+    text-decoration: none;
+    padding: 20px;
+}
+.element__textblock_b{
+    padding-bottom: 20px;
+}

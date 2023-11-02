@@ -11,8 +11,8 @@ const Footer = () => {
             <aside>
                 <ul>
                     <ul>
-                        <li><a href={'#'}>Home</a></li>
-                        <li><a href={'#'}>Catalog</a></li>
+                        <li><a href={'/'}>Home</a></li>
+                        <li><a href={'/catalog'}>Catalog</a></li>
                         <li><a href={'#'}>Help</a></li>
                         <li><a href={'#'}>Sing up</a></li>
                     </ul>
