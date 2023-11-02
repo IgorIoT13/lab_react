@@ -1,5 +1,5 @@
 
-import Img from '../../../header/img/boing-1.jpg';
+import Img from '../../../Home/container/img/boing-1.jpg';
 export const element_catalog = [
     {
         img: Img,

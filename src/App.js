@@ -3,10 +3,10 @@ import React from "react";
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
 import './App.css';
-import Navpan from './components/nav/Navpan'
-import Contend from "./components/header/Contend";
-import Header from "./components/container/Header";
-import Footer from "./components/footer/Footer";
+import Navpan from './components/Home/nav/Navpan'
+import Contend from "./components/Home/container/Contend";
+import Header from "./components/Home/header/Header";
+import Footer from "./components/Home/footer/Footer";
 
 import Catalog from "./components/catalog/Catalog";
 

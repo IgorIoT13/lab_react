@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../css/buyelement.css';
 
-import Img from '../../../../header/img/boing-1.jpg'
+import Img from '../../../../Home/container/img/boing-1.jpg'
 
 const Buyelement = (props) => {
     return (

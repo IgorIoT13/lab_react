@@ -6,6 +6,8 @@ import {
     InputStyle
 } from '../medlecont/css/elementsStyle'
 
+
+
 const Upcont = (props) => {
     return (
         <div>
@@ -16,7 +18,7 @@ const Upcont = (props) => {
                <InputStyle>
                    <input type={"search"} id={'search_input'} title={'Введіть назву літака'} />
 
-                   <Searchbutt/>
+                   <Searchbutt />
                    <Sortbutt/>
 
                    <hr/>
@@ -27,3 +29,4 @@ const Upcont = (props) => {
 };
 
 export default Upcont;
+
