@@ -3,6 +3,12 @@ import Element from "./element/Element";
 import './css/header.css'
 import DecorateBlocEle from "./element/DecorateBlocEle";
 
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
+import icon_1 from './img/gear-solid.svg';
+
 import Boing_1 from './img/boing-1.jpg';
 
 import Superjet from './img/superjet.jpg';
@@ -73,14 +79,16 @@ const Contend = () => {
 
 
                             <div className={'flex_block'}>
-                                <DecorateBlocEle post = {{img:"./",
-                                    title:"Ціна",
-                                    description:"Наша політика це забезпечення максимальної доступності для клієнтів"}}/>,
 
-                                `<DecorateBlocEle post = {{img:"./",
+                                    <DecorateBlocEle post = {{img:"",
+                                        title:"Ціна",
+                                        description:"Наша політика це забезпечення максимальної доступності для клієнтів"}}/>,
+
+                                <DecorateBlocEle className={'last'} post = {{img:"",
                                     title:"Різноманіття",
                                     description:"У наших ангарах знаходяться велика " +
                                         "кількість різноманітних влітаків тому у нас ви точно найдете літак по смаку"}}/>
+
                             </div>`
                     </div>
             </div>

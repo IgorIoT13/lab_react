@@ -8,10 +8,22 @@ import {
     ElementsStyle
 } from "./css/elementsStyle";
 
+
+
+const content = {
+    "title": "Наші літаки :",
+    "uk": {
+        "title": "Наші літаки :"
+    },
+    "en": {
+        "title": "Our flies :"
+    }
+};
+
 const Content = () => {
     return (
         <div>
-            <h2>Наші літаки :</h2>
+            <h2>{content.title}</h2>
             <ElementsStyle>
                 {element_catalog.map((element, index) => (
                     <Buyelement key={index} post={element} />

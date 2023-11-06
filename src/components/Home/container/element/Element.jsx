@@ -17,7 +17,9 @@ const Element = (props) => {
 
                 <a href={'#'}>Більше</a>
             </div>
+            <script src="https://kit.fontawesome.com/bfeddb1814.js" crossOrigin="anonymous"></script>
         </div>
+
     );
 };
 

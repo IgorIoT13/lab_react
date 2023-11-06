@@ -1,5 +1,6 @@
 .dec_block{
     max-width: 30%;
+    border-top:1px solid black ;
     border-right: 2px solid black;
     border-left: 2px solid black;
     border-bottom: 1px solid black;
@@ -22,4 +23,7 @@
     display: flex;
     margin: 30px;
     margin-left: 29%;
+}
+.last{
+    margin: 0px;
 }

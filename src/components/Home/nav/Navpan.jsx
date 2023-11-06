@@ -1,15 +1,16 @@
 import React from 'react';
 import './css/navpan.css'
 
+import {nav} from "../../text_const";
 const Navpan = () => {
     return (
         <nav>
             <div className={'navpan'}>
                 <ul>
-                    <li><a href={'/'}>Home</a></li>
-                    <li><a href={'/catalog'}>Catalog</a></li>
-                    <li><a href={'#'}>Help</a></li>
-                    <li><a href={'#'}>Contact</a></li>
+                    <li><a href={'/'}>{nav.ukr.home}</a></li>
+                    <li><a href={'/catalog'}>{nav.ukr.catalog}</a></li>
+                    <li><a href={'#'}>{nav.ukr.help}</a></li>
+                    <li><a href={'#'}>{nav.ukr.contact}</a></li>
                 </ul>
             </div>
             <hr/>

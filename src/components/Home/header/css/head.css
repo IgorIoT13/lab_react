@@ -17,7 +17,7 @@ header{
             color: white;
             padding: 10px;
             padding-bottom: 30px;
-
+            -webkit-text-stroke: #151010 0.5px;
         }
     header .down{
         padding: 10px;
