@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {SearchStyle} from "../css/buttonStyle";
 
 import {
-    element_catalog
+
 }from'../../medlecont/element_catalog'
 
 
@@ -12,13 +12,6 @@ import {
 
 function SearchFunction(search = "") {
     let result_list = []
-
-    element_catalog.forEach((ele) =>{
-        let {title} = ele;
-        if (title.toLowerCase().indexOf(search) !== -1) {
-            result_list.push(ele);
-        }
-    })
 
     console.log(result_list)
 }

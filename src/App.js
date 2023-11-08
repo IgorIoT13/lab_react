@@ -9,6 +9,14 @@ import Header from "./components/Home/header/Header";
 import Footer from "./components/Home/footer/Footer";
 
 import Catalog from "./components/catalog/Catalog";
+import Item from "./components/item/item";
+
+const test = {
+    "header":"ahfkjajhfkjha",
+    "img": "",
+    "text": "Text"
+
+}
 
 function App() {
   return (
@@ -18,6 +26,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Contend />} />
             <Route path="/catalog" element={<Catalog />} />
+            <Route path="/item" element={<Item uper = {test} />} />
         </Routes>
         <Footer/>
     </div>

@@ -41,3 +41,15 @@ export const footer = {
         "contact":"Contact"
     }
 }
+
+
+export const item = {
+    "ukr":{
+        "backButt":"Назад",
+        "buyButt": "Купити"
+    },
+    "eng":{
+        "backButt":"Back",
+        "buyButt":"Buy"
+    }
+}
