@@ -9,7 +9,7 @@ const Buttonblock = (props) => {
         <ButtBlock>
             <Backbutt id = {props.id}/>
             <Buybutt id = {props.id}/>
-            <Editbutt id = {props.id} />
+            {/*<Editbutt id = {props.id} />*/}
         </ButtBlock>
     );
 };

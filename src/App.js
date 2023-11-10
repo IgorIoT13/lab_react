@@ -26,7 +26,7 @@ function App() {
         <Routes>
             <Route path="/" element={<Contend />} />
             <Route path="/catalog" element={<Catalog />} />
-            <Route path="/item" element={<Item uper = {test} />} />
+            <Route path="/item/:id" element={<Item uper = {test} />} />
         </Routes>
         <Footer/>
     </div>

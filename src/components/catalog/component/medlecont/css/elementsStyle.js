@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ElementsStyle = styled.div`
+export const ElementsStyle = styled.form`
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 2 стовпці */
   grid-template-rows: repeat(2, 1fr); /* 3 рядки */
@@ -14,5 +14,4 @@ export const InputStyle = styled.div`
     margin: 0% 1% 1% 2%;
     padding: 4px;
   }
-  
 `

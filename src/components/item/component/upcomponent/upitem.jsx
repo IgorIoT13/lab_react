@@ -1,18 +1,20 @@
 import React from 'react';
+import img from '../../../Home/container/img/boing-1.jpg';
+import {DivBlock} from "./style/Upcomp";
 
 const Upitem = (props) => {
     return (
-        <div>
+        <DivBlock>
             <article>
-                <img src={props.post.img}/>
+                <img src={img}/>
             </article>
 
             <aside>
-                <h2>{props.post.header}</h2>
-                <h4>{props.post.text}</h4>
-
+                <h2>Title :<br/>{props.post.title}</h2>
+                <h4>Description :<br/>{props.post.description}</h4>
+                <p>Price :<br/>{props.post.fuel}</p>
             </aside>
-        </div>
+        </DivBlock>
     );
 };
 

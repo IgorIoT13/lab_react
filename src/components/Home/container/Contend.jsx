@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Element from "./element/Element";
 import './css/header.css'
 import DecorateBlocEle from "./element/DecorateBlocEle";
@@ -14,29 +14,57 @@ import Boing_1 from './img/boing-1.jpg';
 import Superjet from './img/superjet.jpg';
 
 import Boing_2 from './img/boing-2.jpg'
+import {getAlllight} from "../../API/BackEnd";
 
 
 const elementsData = [
     {
         img: Boing_1,
         title: "Boing-45",
-        text: "Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."
+        description: "Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині."
     },
     {
         img: Superjet,
         title: "SuperJet",
-        text: "Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."
+        description: "Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині.'"
     },
     {
         img: Superjet,
         title: "Boing- 87",
-        text: "Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині. Також ..."
+        description: "Унікальний літак побудований у 1989. Зарекомендував себе в Чехії та Угорщині.test test test test"
     }
 ];
 
 
 
 const Contend = () => {
+
+    const [elementCatalog, setElementCatalog] = useState([]);
+    const [visibleElements, setVisibleElements] = useState(6); // Початкова кількість видимих елементів
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        try {
+            const data = await getAlllight();
+            setElementCatalog(data);
+        } catch (error) {
+            console.error('Помилка завантаження даних', error);
+        }
+    };
+
+    const loadMore = () => {
+        // Збільшуємо кількість видимих елементів на 6
+        setVisibleElements(visibleElements + 6);
+    };
+
+
+
+
+
+
     return (
         <span>
             <div className={'pre_ambul'}>

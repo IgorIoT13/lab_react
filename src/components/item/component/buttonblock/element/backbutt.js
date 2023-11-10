@@ -5,7 +5,7 @@ import {item} from "../../../../text_const";
 
 const Backbutt = (props) => {
     return (
-        <BackButt id={`back_${props.id}`}>
+        <BackButt href={'/catalog'} id={`back_${props.id}`}>
             {item.ukr.backButt}
         </BackButt>
     );
