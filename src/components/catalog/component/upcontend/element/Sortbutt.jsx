@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import {SortStyle} from "../css/buttonStyle";
 
-const Sortbutt = () => {
+const Sortbutt = ({returnType}) => {
     const [sortByTitle, setSortByTitle] = useState(false);
     const [sortByCost, setSortByCost] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -18,11 +18,17 @@ const Sortbutt = () => {
             </button>
             <ul style={{display: isOpen ? "block" : "none"}}>
                 <li>
-                    <input type="checkbox" checked={sortByTitle} onChange={() => setSortByTitle(!sortByTitle)} multiple={false} />
+                    <input type="checkbox" checked={sortByTitle} onChange={() => {
+                        setSortByTitle(!sortByTitle)
+                        returnType("Title")
+                    } } multiple={false} />
                     За назвою
                 </li>
                 <li>
-                    <input type="checkbox" checked={sortByCost} onChange={() => setSortByCost(!sortByCost)} multiple={false} />
+                    <input type="checkbox" checked={sortByCost} onChange={() => {
+                        setSortByCost(!sortByCost)
+                        returnType("Fuel")
+                    }} multiple={false} />
                     За ціною
                 </li>
             </ul>

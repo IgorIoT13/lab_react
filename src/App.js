@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 
@@ -19,14 +19,26 @@ const test = {
 }
 
 function App() {
-  return (
+
+    const [dataS, setD] = useState([]);
+
+    useEffect(() => {
+        console.log(dataS); // Вивести оновлене значення
+    }, [dataS]);
+
+    const datasiense = (data) => {
+        setD(data);
+    }
+
+
+    return (
     <div className="App">
         <Navpan />
         <Header />
         <Routes>
             <Route path="/" element={<Contend />} />
-            <Route path="/catalog" element={<Catalog />} />
-            <Route path="/item/:id" element={<Item uper = {test} />} />
+            <Route path="/catalog" element={<Catalog dataSent = {datasiense} />} />
+            <Route path="/item/:id" element={<Item uper = {dataS} />} />
         </Routes>
         <Footer/>
     </div>

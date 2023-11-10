@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
 import Sortbutt from "./element/Sortbutt";
 import Searchbutt from "./element/Searchbutt";
-import Content from "../medlecont/Content";
 
 import {
     InputStyle
 } from '../medlecont/css/elementsStyle';
 
-const Upcont = ({ sentSearch }) => {
+const Upcont = ({ sentSearch, sentType, sentFilter }) => {
     const [searchText, setSearchText] = useState('');
+
+    const [filter, setFilter] = useState(99999)
+
+    const returnType = (data) =>{
+        sentType(data)
+    }
+
+
 
     return (
         <div>
@@ -26,9 +33,22 @@ const Upcont = ({ sentSearch }) => {
                             sentSearch(newValue);
                         }}
                     />
+
+
+
                     <Searchbutt input={searchText} />
-                    <Sortbutt />
+                    <Sortbutt returnType = {returnType}/>
+
+
+                    <input type="text"
+                           value={filter}
+                           onChange={(e) => {
+                               const newValuer = e.target.value;
+                               setFilter(newValuer)
+                               sentFilter(newValuer)
+                           }}/>
                     <hr />
+
                 </InputStyle>
             </div>
         </div>

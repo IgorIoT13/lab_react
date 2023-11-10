@@ -25,13 +25,7 @@ const Elements = () => {
         setElements(element);
     };
 
-    // You don't need to export getElements here
-
-    return (
-        <div>
-            {/* Render your component content here */}
-        </div>
-    );
+    return elements
 };
 
 export default Elements;

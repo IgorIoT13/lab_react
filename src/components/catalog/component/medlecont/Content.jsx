@@ -18,28 +18,35 @@ const Content = (props) => {
     const [elementCatalog, setElementCatalog] = useState([]);
     const [visibleElements, setVisibleElements] = useState(6); // Початкова кількість видимих елементів
 
-
-
     useEffect(() => {
         fetchData();
-        console.log()
-    }, [props.search]);
+        }, [props.search, props.sort, props.filter]);
 
     const fetchData = async () => {
         try {
             const data = await findElementByTitle(props.search);
-            setElementCatalog(data);
-            console.log(props.search)
+            let filteredData = data;
+            if (props.filter) {
+                filteredData = data.filter(element => element.fuel <= props.filter);
+            }
+            let sortedData = filteredData;
+            if (props.sort === 'Title') {
+                sortedData = filteredData.sort((a, b) => a.title.localeCompare(b.title));
+            } else if (props.sort === 'Fuel') {
+                sortedData = filteredData.sort((a, b) => a.fuel - b.fuel);
+            }
+            setElementCatalog(sortedData);
+            props.sentdata(sortedData);
         } catch (error) {
             console.error('Помилка завантаження даних', error);
+            setElementCatalog([])
         }
     };
 
-
     const loadMore = () => {
-        // Збільшуємо кількість видимих елементів на 6
         setVisibleElements(visibleElements + 6);
     };
+
 
     return (
         <div>
