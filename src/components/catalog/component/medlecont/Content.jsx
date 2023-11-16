@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Buyelement from './element/buyelement';
 
 import { ElementsStyle } from './css/elementsStyle';
-import {findElementByTitle, getAlllight} from "../../../API/BackEnd";
+import {filter, findElementByTitle, getAlllight} from "../../../API/BackEnd";
 
 const content = {
     title: 'Наші літаки :',
@@ -30,11 +30,19 @@ const Content = (props) => {
                 filteredData = data.filter(element => element.fuel <= props.filter);
             }
             let sortedData = filteredData;
-            if (props.sort === 'Title') {
-                sortedData = filteredData.sort((a, b) => a.title.localeCompare(b.title));
-            } else if (props.sort === 'Fuel') {
-                sortedData = filteredData.sort((a, b) => a.fuel - b.fuel);
+
+            if (props.sort) {
+                const sortResult = await filter(props.sort);
+
+                const commonElements = sortResult.filter(el =>
+                    filteredData.some(ele => el.id === ele.id)
+                );
+
+                console.log(commonElements)
+
+                sortedData = commonElements;
             }
+
             setElementCatalog(sortedData);
             props.sentdata(sortedData);
         } catch (error) {

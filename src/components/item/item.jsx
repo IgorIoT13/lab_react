@@ -2,28 +2,41 @@ import React, { useEffect, useState } from 'react';
 import Upitem from "./component/upcomponent/upitem";
 import Buttonblock from "./component/buttonblock/buttonblock";
 import { useParams } from "react-router-dom";
-import { findElementById } from "../API/BackEnd";
-import Elements from "../API/elements";
-import elements from "../API/elements";
+import {findElementById, findElementByTitle} from "../API/BackEnd";
 
 const Item = (props) => {
     const { id } = useParams();
-    const [dataAll, setDataAll] = useState([]);
+    const [data, setData] = useState([]);
 
-    let elements = Elements()
+    useEffect(() => {
+        fetchData();
+    }, [id]);
 
-    console.log(elements[0])
-
-    let data = {};
-
-
-    elements.forEach((el) => {
-        if (el.id == id){
-
-            console.log(el)
-            data = el
+    const fetchData = async () => {
+        try {
+            const data = await findElementById(id);
+            setData(data);
+        } catch (error) {
+            console.error('Помилка завантаження даних', error);
+            setData(null)
         }
-    })
+    };
+
+
+    // let elements = Elements()
+    //
+    // console.log(elements[0])
+    //
+    // let data = {};
+    //
+    //
+    // elements.forEach((el) => {
+    //     if (el.id == id){
+    //
+    //         console.log(el)
+    //         data = el
+    //     }
+    // })
 
 
 
@@ -34,7 +47,7 @@ const Item = (props) => {
 
     // Оновити елементи
     const handleUpdate = () => {
-        setDataAll([data]);
+        setData([data]);
     };
 
     return (

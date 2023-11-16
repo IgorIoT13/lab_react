@@ -1,41 +1,44 @@
-const RESOURSE_URL = `http://localhost:8080/Element`;
+import axios from 'axios';
 
-const baseRequest = async ({ urlPath = "", method = "GET", body = null }) => {
+const RESOURCE_URL = 'http://localhost:8080/Element';
+
+const baseRequest = async ({ urlPath = '', method = 'GET', data = null }) => {
     try {
-        const reqParams = {
+        const config = {
             method,
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
             },
         };
 
-        if (body) {
-            reqParams.body = JSON.stringify(body);
+        if (data) {
+            config.data = data;
         }
 
-        return await fetch(`${RESOURSE_URL}${urlPath}`, reqParams);
+        const response = await axios(`${RESOURCE_URL}${urlPath}`, config);
+        return response.data;
     } catch (error) {
-        console.error("HTTP ERROR: ", error);
+        console.error('HTTP ERROR: ', error);
     }
 };
 
 // public functionality
 
 export const getAlllight = async () => {
-    const rawResponse = await baseRequest({urlPath: "/all" });
-
-    return await rawResponse.json();
+    return await baseRequest({ urlPath: '/all' });
 };
 
+export const findElementById = async (id) => {
+    return await baseRequest({ urlPath: `?id=${id}`, method: 'GET' });
+};
 
-export const findElementById = async (id) =>{
-    const element = await baseRequest({urlPath: `?id=${id}`, method:"GET"})
+export const findElementByTitle = async (title) => {
+    return await baseRequest({ urlPath: `/find?title=${title}`, method: 'GET' });
+};
 
-    return await element.json();
-}
-
-export const findElementByTitle = async (title) =>{
-    const element = await baseRequest({urlPath: `/find?title=${title}`, method:"GET"})
-
-    return await element.json();
-}
+export const filter = async (type) => {
+    return await baseRequest({
+        urlPath: `/filter?title=${type}`,
+        method: 'GET'
+    });
+};
