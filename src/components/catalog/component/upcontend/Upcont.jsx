@@ -5,15 +5,37 @@ import Searchbutt from "./element/Searchbutt";
 import {
     InputStyle
 } from '../medlecont/css/elementsStyle';
+import Elements from "../../../API/elements";
+import {filter} from "../../../API/BackEnd";
 
-const Upcont = ({ sentSearch, sentType, sentFilter }) => {
+const Upcont = ({zava}) => {
     const [searchText, setSearchText] = useState('');
 
-    const [filter, setFilter] = useState(99999)
+    const [filterx, setFilter] = useState(99999)
 
-    const returnType = (data) =>{
-        sentType(data)
+    const [sort, setSort] = useState('')
+
+    const [ele, setEle] = useState(Elements())
+
+    function getSort(data) {
+        setSort(data)
     }
+
+
+
+    const fetchData = async (sortz, sear, filz) => {
+        try {
+            const data = await filter(sortz, sear, parseInt(filz));
+            setEle(data)
+            zava(data)
+
+        } catch (error) {
+            console.error('Помилка завантаження даних', error);
+        }
+
+    };
+
+
 
 
 
@@ -30,23 +52,20 @@ const Upcont = ({ sentSearch, sentType, sentFilter }) => {
                         onChange={(e) => {
                             const newValue = e.target.value;
                             setSearchText(newValue);
-                            sentSearch(newValue);
                         }}
                     />
 
 
 
-                    <Searchbutt input={searchText} />
-                    <Sortbutt returnType = {returnType}/>
+                    <Searchbutt input={searchText} onClickCustom={() => fetchData(sort, searchText, filterx)} />
+                    <Sortbutt returnType = {getSort}/>
 
 
-                    <input type="text"
-                           value={filter}
-                           onChange={(e) => {
-                               const newValuer = e.target.value;
-                               setFilter(newValuer)
-                               sentFilter(newValuer)
-                           }}/>
+                    <input type="text" value={filterx} onChange={(e) => {
+                        const newValue = e.target.value;
+                        setFilter(newValue);
+                    }
+                    }/>
                     <hr />
 
                 </InputStyle>

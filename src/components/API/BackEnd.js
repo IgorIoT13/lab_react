@@ -36,9 +36,9 @@ export const findElementByTitle = async (title) => {
     return await baseRequest({ urlPath: `/find?title=${title}`, method: 'GET' });
 };
 
-export const filter = async (type) => {
+export const filter = async (type,title, max) => {
     return await baseRequest({
-        urlPath: `/filter?title=${type}`,
+        urlPath: `/filter?type=${type}&title=${title}&max=${max}`,
         method: 'GET'
     });
 };

@@ -1,42 +1,45 @@
-import React, {createContext, useState} from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 
 import Upcont from "./component/upcontend/Upcont";
 import Content from "./component/medlecont/Content";
+import Elements from "../API/elements";
+import {getAlllight} from "../API/BackEnd";
 
 const MyContext = createContext('');
 
 const Catalog = ({dataSent}) => {
 
-    const [search, setSearch] = useState('');
+    const [ele, setEle] = useState([]);
 
-    const [sort, setSort] = useState('');
+    useEffect(() => {
+        const fetchElements = async () => {
+            try {
+                const data = await getAlllight();
+                setEle(data);
+            } catch (error) {
+                console.error("Error fetching elements", error);
+            }
+        };
 
-    const [filter, setFilter] = useState(99999)
+        fetchElements();
+    }, []);
+
+
+
+
 
 
     const getParam = (data) =>{
-        setSearch(data)
+        setEle(data)
         console.log(data)
     }
 
-    const sortet = (data) => {
-        setSort(data)
-    }
-
-    const handleChange = (event) => {
-        setSearch(event.target.value);
-    };
-
-
-    const haveFilter = (data) => {
-        setFilter(data)
-    }
 
 
     return (
         <div>
-            <Upcont sentSearch={getParam} sentType={sortet} sentFilter={haveFilter} />
-            <Content search = {search} sort = {sort} filter={filter} sentdata ={dataSent}/>
+            <Upcont zava = {getParam} />
+            <Content ele = {ele} sentdata ={dataSent}/>
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import {SearchStyle} from "../css/buttonStyle";
 
@@ -7,7 +7,7 @@ import {SearchStyle} from "../css/buttonStyle";
 const Searchbutt = (props) => {
 
     return (
-        <SearchStyle>
+        <SearchStyle onClick={() => props.onClickCustom(props.input)}>
             Знайти
         </SearchStyle>
     );
