@@ -8,7 +8,7 @@ import {
 import Elements from "../../../API/elements";
 import {filter} from "../../../API/BackEnd";
 
-const Upcont = ({zava}) => {
+const Upcont = ({zava, statusInfo}) => {
     const [searchText, setSearchText] = useState('');
 
     const [filterx, setFilter] = useState(99999)
@@ -25,12 +25,14 @@ const Upcont = ({zava}) => {
 
     const fetchData = async (sortz, sear, filz) => {
         try {
+            statusInfo(false)
             const data = await filter(sortz, sear, parseInt(filz));
             setEle(data)
             zava(data)
+            statusInfo(true)
 
         } catch (error) {
-            console.error('Помилка завантаження даних', error);
+            statusInfo(false);
         }
 
     };

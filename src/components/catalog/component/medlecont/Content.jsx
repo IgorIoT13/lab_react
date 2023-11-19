@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Buyelement from './element/buyelement';
 
 import { ElementsStyle } from './css/elementsStyle';
-import {filter, findElementByTitle, getAlllight} from "../../../API/BackEnd";
 
 const content = {
     title: 'Наші літаки :',
@@ -35,11 +34,18 @@ const Content = (props) => {
     return (
         <div>
             <h2>{content.title}</h2>
-            <ElementsStyle>
-                {elementCatalog.slice(0, visibleElements).map((element, index) => (
-                    <Buyelement key={index} post={element} />
-                ))}
-            </ElementsStyle>
+            {props.status === false &&(
+                <div className="loader">Loading...</div>
+            )}
+
+            {props.status === true &&(
+                <ElementsStyle>
+                    {elementCatalog.slice(0, visibleElements).map((element, index) => (
+                        <Buyelement key={index} post={element} />
+                    ))}
+                </ElementsStyle>
+            )}
+
             {visibleElements < elementCatalog.length && (
                 <button onClick={loadMore}>Завантажити більше</button>
             )}

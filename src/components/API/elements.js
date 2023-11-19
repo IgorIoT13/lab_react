@@ -13,7 +13,7 @@ const Elements = () => {
             const data = await getAlllight();
             setElements(data);
         } catch (error) {
-            console.error("Error fetching elements", error);
+            console.log('ajkshfkjagfkjahg');
         }
     };
 

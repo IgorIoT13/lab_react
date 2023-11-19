@@ -22,30 +22,10 @@ const Item = (props) => {
         }
     };
 
-
-    // let elements = Elements()
-    //
-    // console.log(elements[0])
-    //
-    // let data = {};
-    //
-    //
-    // elements.forEach((el) => {
-    //     if (el.id == id){
-    //
-    //         console.log(el)
-    //         data = el
-    //     }
-    // })
-
-
-
-
     if (!data) {
         return <div>Loading...</div>;
     }
 
-    // Оновити елементи
     const handleUpdate = () => {
         setData([data]);
     };
