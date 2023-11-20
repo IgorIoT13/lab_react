@@ -4,7 +4,7 @@ import {item} from "../../../../text_const";
 
 const Buybutt = (props) => {
     return (
-        <BuyButt id={`buy_${props.id}`}>
+        <BuyButt onClick={props.onClick} id={`buy_${props.id}`}>
             {item.ukr.buyButt}
         </BuyButt>
     );

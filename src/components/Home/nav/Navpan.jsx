@@ -9,7 +9,7 @@ const Navpan = () => {
                 <ul>
                     <li><a href={'/'}>{nav.ukr.home}</a></li>
                     <li><a href={'/catalog'}>{nav.ukr.catalog}</a></li>
-                    <li><a href={'#'}>{nav.ukr.help}</a></li>
+                    <li><a href={'/cart'}>{nav.ukr.help}</a></li>
                     <li><a href={'#'}>{nav.ukr.contact}</a></li>
                 </ul>
             </div>

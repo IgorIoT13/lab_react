@@ -3,10 +3,13 @@ import Upitem from "./component/upcomponent/upitem";
 import Buttonblock from "./component/buttonblock/buttonblock";
 import { useParams } from "react-router-dom";
 import {findElementById, findElementByTitle} from "../API/BackEnd";
+import {useDispatch, useSelector} from "react-redux";
 
 const Item = (props) => {
     const { id } = useParams();
     const [data, setData] = useState([]);
+
+    const [count, setCount] = useState(1)
 
     useEffect(() => {
         fetchData();
@@ -22,19 +25,39 @@ const Item = (props) => {
         }
     };
 
+    const dispatch = useDispatch()
+    const itemCart = useSelector(state => state)
+
     if (!data) {
         return <div>Loading...</div>;
     }
 
-    const handleUpdate = () => {
-        setData([data]);
-    };
+
+
+    function add(count) {
+        dispatch({type:"ADD_CART", payload: {
+                id: data,
+                count:parseInt(count)
+            }})
+
+    }
+
 
     return (
         <div>
             <Upitem post={data} />
             <hr/>
-            <Buttonblock id={id} onClick={handleUpdate} />
+            <input
+                type={'number'}
+                value={count}
+                onChange={(e) => {
+                    const newValuer = e.target.value
+                    setCount(newValuer)
+                }}
+            />
+            <Buttonblock id={id} onClick={() => {
+                add(count)
+            }} />
         </div>
     );
 };

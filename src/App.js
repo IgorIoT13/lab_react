@@ -10,6 +10,7 @@ import Footer from "./components/Home/footer/Footer";
 
 import Catalog from "./components/catalog/Catalog";
 import Item from "./components/item/item";
+import Cart from "./components/cart/cart";
 
 const test = {
     "header":"ahfkjajhfkjha",
@@ -39,6 +40,7 @@ function App() {
             <Route path="/" element={<Contend />} />
             <Route path="/catalog" element={<Catalog dataSent = {datasiense} />} />
             <Route path="/item/:id" element={<Item uper = {dataS} />} />
+            <Route path={'/cart'} element={<Cart/>}/>
         </Routes>
         <Footer/>
     </div>

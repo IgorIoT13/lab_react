@@ -7,7 +7,7 @@ const Buttonblock = (props) => {
     return (
         <ButtBlock>
             <Backbutt id = {props.id}/>
-            <Buybutt id = {props.id}/>
+            <Buybutt onClick={props.onClick} id = {props.id}/>
         </ButtBlock>
     );
 };

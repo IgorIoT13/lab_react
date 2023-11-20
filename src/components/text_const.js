@@ -2,7 +2,7 @@ export const nav = {
     "ukr":{
         "home":"Головна",
         "catalog":"Каталог",
-        "help":"Допомога",
+        "help":"Кошик",
         "contact":"Контакти"
     },
     "eng":{
@@ -31,7 +31,7 @@ export const footer = {
     "ukr":{
         "home":"Головна",
         "catalog":"Каталог",
-        "help":"Допомога",
+        "help":"Кошик",
         "contact":"Контакти"
     },
     "eng":{
